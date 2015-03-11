@@ -1,0 +1,15 @@
+{
+  "name": "MultiVision",
+  "version": "0.0.1",
+  "description": "Diving into MEAN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikita Cherevkov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.2",
+    "jade": "^1.9.2"
+  }
+}
