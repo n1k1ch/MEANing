@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/partials/:partialPath', function(req, res){
 	console.log('getting /partials/' + req.params.partialPath );
-	res.render('/partials/' + req.params.partialPath);
+	res.render('partials/' + req.params.partialPath);
 });
 
 //all routes html/css/javascript/...
