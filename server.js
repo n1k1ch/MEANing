@@ -57,6 +57,10 @@ app.get('*', function(req, res){
 	});
 });
 
+
+var procEnvPort = process.env.PORT;
+console.log(procEnvPort);
+
 var port = process.env.PORT || 5000;
 app.listen(port);
 console.log('Listening on port ' + port + '...');
