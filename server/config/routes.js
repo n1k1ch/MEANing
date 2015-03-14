@@ -9,6 +9,11 @@ module.exports = function(app){
 
 	app.post('/login', auth.authenticate);
 
+	app.post('/logout', function(req, res) {
+		req.logout();
+		res.end();
+	});
+
 
 	//all routes html/css/javascript/...
 	app.get('*', function(req, res){
