@@ -29,7 +29,7 @@ angular.module('app').factory('mvAuth', function($http, mvIdentity, $q, mvUser){
 		},
 
 		authorizeCurrentUserForRoute: function(role) {
-			if(mvIdentity.isAuthorized('admin')) {
+			if(mvIdentity.isAuthorized(role)) {
 				return true;
 			} else {
 				return $q.reject('not authorized');
