@@ -1,8 +1,6 @@
 var auth = require('./auth'),
 	users = require('../controllers/users'),
-	courses = require('../controllers/courses'),
-	mongoose = require('mongoose'),
-	User = mongoose.model('User');
+	courses = require('../controllers/courses');
 
 module.exports = function(app){
 	app.get('/api/users', auth.requiresRole('admin'), users.getUsers);
@@ -33,4 +31,4 @@ module.exports = function(app){
 			bootstrappedUser: req.user//sending data to SERVER-SIDE jade template
 		});
 	});
-}
+};
