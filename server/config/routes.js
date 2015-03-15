@@ -21,6 +21,9 @@ module.exports = function(app){
 		res.end();
 	});
 
+	app.all('/api/*', function(req, res) {
+		res.send(404);
+	});
 
 	//all routes html/css/javascript/...
 	app.get('*', function(req, res){
