@@ -17,8 +17,8 @@ module.exports = function(app){
 
 	//all routes html/css/javascript/...
 	app.get('*', function(req, res){
-		res.render('index'/*, {
-			mongoMessage: mongoMessage//sending data to SERVER-SIDE jade template
-		}*/);
+		res.render('index', {
+			bootstrappedUser: req.user//sending data to SERVER-SIDE jade template
+		});
 	});
 }
