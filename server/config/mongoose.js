@@ -15,7 +15,8 @@ module.exports = function(config){
 		lastName: String,
 		username: String,
 		salt: String,
-		hashed_pwd: String
+		hashed_pwd: String,
+		roles: [String]
 	});
 
 	userSchema.methods = {
@@ -28,16 +29,22 @@ module.exports = function(config){
 
 	User.find({}).exec(function(err, collection){
 		if(collection.length === 0) {
-			createSaltedUser('Nikita', 'Cherevkov', 'n1k1ch', User);
-			createSaltedUser('Alexandr', 'Lavrov', 'hahol1989', User);
-			createSaltedUser('Sergey', 'Trindiuk', 'serega_batya1987', User);
+			createSaltedUser('Nikita', 'Cherevkov', 'n1k1ch', User, ['admin']);
+			createSaltedUser('Alexandr', 'Lavrov', 'hahol1989', User, []);
+			createSaltedUser('Sergey', 'Trindiuk', 'serega_batya1987', User, []);
 		}
 	});
 }
 
-function createSaltedUser(firstName, lastName, username, User) {
+function createSaltedUser(firstName, lastName, username, User, roles) {
 	var salt = createSalt();
-	User.create({firstName:firstName, lastName: lastName, username: username, salt: salt, hashed_pwd: hashPwd(salt, username)});
+	User.create({firstName:firstName, 
+		lastName: lastName, 
+		username: username, 
+		salt: salt, hashed_pwd: 
+		hashPwd(salt, username),
+		roles: roles
+	});
 }
 
 function createSalt() {
