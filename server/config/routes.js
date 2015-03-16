@@ -8,6 +8,8 @@ module.exports = function(app){
 	app.put('/api/users', users.updateUser);
 
 	app.get('/api/courses', courses.getCourses);
+	app.get('/api/courses/:id', courses.getCourseById);
+
 	app.get('/partials/*', function(req, res){
 		//console.log('getting /partials/' + req.params.partialPath );
 		res.render('../../public/app/' + req.params[0]);
