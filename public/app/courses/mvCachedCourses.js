@@ -4,7 +4,7 @@ angular.module('app').factory('mvCachedCourses', function(mvCourse) {
 	return {
 		query: function() {
 			if(!courseList) {
-				courseList.mvCourse.query();
+				courseList = mvCourse.query();
 			}
 
 			return courseList;
